@@ -16,6 +16,14 @@ public class ProjetilScript : MonoBehaviour {
         Destroy(gameObject);
     }
 
+	void OnTriggerEnter2D(Collider2D c) {
+		// Destroi o sub inimigo
+		if (c.tag == "SubInimigo") {
+			Destroy (c.gameObject);
+		}
+
+	}
+
     void Update () {
         // Mover o projetil
         transform.Translate(Vector2.right * velocidade * Time.deltaTime);
